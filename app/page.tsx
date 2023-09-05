@@ -1,113 +1,73 @@
+'use client'
 import Image from 'next/image'
+import Button from '../components/landing/Button'
+import { useState, useEffect } from 'react'
+import OneStep from '@/components/landing/OneStep'
+import Subscription from '@/components/landing/Subscription'
+import FAQ from '@/components/landing/FAQ'
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <main className=''>
+      <div className='pt-[100px] bg-neutral-75'>
+        <div className='container mx-auto flex flex-col lg:flex-row-reverse justify-center lg:justify-between items-center gap-28 mt-44 pb-20 px-6'>
+          <div className='flex-none lg:basis-2/5 flex justify-end'>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src='/assets/images/dummy.png'
+              width={441}
+              height={272}
+              alt='dummy'
             />
-          </a>
+          </div>
+          <div className='flex flex-col gap-8'>
+            <p className=' font-bold text-2xl'>Elevate Your Messaging Efficiency with Our Innovative Admin Tools</p>
+            <p>Selamat datang di Fowardit! Pengelolaan pesan Anda menjadi lebih mudah dengan Admin Tools kami. Penerusan pesan jadi lebih lancar melalui fitur otomatis, sehingga Anda dapat lebih fokus pada interaksi dengan pelanggan. Dapatkan kendali penuh atas pesan dan informasi dengan manajemen konten dan kontak yang praktis.</p>
+            <div className='flex gap-4 w-full lg:justify-start'>
+              <Button text='Demo' href='/' isPrimary={false} styles='px-10 basis-2/5 lg:basis-0' />
+              <Button text='Daftar Sekarang' href='/' styles='basis-3/5 lg:basis-0' />
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className='flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-28 mt-44 px-6'>
+        <div className='flex-none lg:basis-1/2 flex justify-center'>
+          <Image
+            src='/assets/images/landing_image1.png'
+            width={226}
+            height={187}
+            alt='dummy'
+          // className='w-full lg:w-[80%]'
+          />
+        </div>
+        <div className='lg:basis-1/2 '>
+          <div className='flex flex-col gap-8 lg:w-[75%]'>
+            <p className=' font-bold text-2xl'>Reach Further with Ease!</p>
+            <p>Dengan Fowardin, Anda dapat dengan mudah menyampaikan pesan kepada banyak kontak sekaligus melalui fitur Broadcast. Hemat waktu dan tenaga dengan mengirim pesan secara massal, memperluas jangkauan komunikasi Anda tanpa repot.</p>
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className='bg-neutral-75 mt-20 py-20'>
+        <div className='px-6 container mx-auto flex flex-col lg:flex-row-reverse justify-center items-center gap-28 lg:gap-0'>
+          <div className='flex-none flex justify-center basis-1/2 '>
+            <Image
+              src='/assets/images/landing_image2.png'
+              width={157}
+              height={207}
+              alt='dummy'
+            />
+          </div>
+          <div className='flex lg:justify-end basis-1/2 '>
+            <div className='flex flex-col gap-8 lg:w-[70%]'>
+              <p className=' font-bold text-2xl'>Right Time, Effective Messages!</p>
+              <p>Manfaatkan keunggulan fitur Campaign di Fowardin untuk merencanakan dan mengirim pesan iklan pada waktu yang tepat. Targetkan audiens yang sesuai dengan produk atau layanan Anda, serta optimalkan pesan iklan yang efektif. Dengan Campaign, Anda dapat mencapai hasil iklan yang lebih akurat dan berhasil.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+      <OneStep />
+      <Subscription />
+      <FAQ />
+    </main >
   )
 }
